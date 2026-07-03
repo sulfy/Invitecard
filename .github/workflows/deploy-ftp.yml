@@ -1,0 +1,60 @@
+name: Deploy to weonegroup.com (FTP)
+
+# Publishes index.html to the GoDaddy hosting via FTP.
+#
+# SETUP (one time): in this repo go to
+#   Settings -> Secrets and variables -> Actions -> New repository secret
+# and add:
+#   FTP_USERNAME  -> the FTP user name
+#   FTP_PASSWORD  -> the FTP password
+#
+# Then run this workflow from the Actions tab (or push a change).
+# Adjust "server-dir" below if your FTP user does not land directly
+# in the folder that serves the website.
+
+on:
+  push:
+    branches: ["**"]
+  workflow_dispatch:
+    inputs:
+      server_dir:
+        description: "Remote directory to upload into (must end with /)"
+        required: false
+        default: "./"
+
+jobs:
+  ftp-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check FTP credentials are configured
+        id: creds
+        env:
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          if [ -z "$FTP_USERNAME" ] || [ -z "$FTP_PASSWORD" ]; then
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::FTP_USERNAME / FTP_PASSWORD secrets not set - skipping FTP deploy."
+          else
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Checkout
+        if: steps.creds.outputs.configured == 'true'
+        uses: actions/checkout@v4
+
+      - name: Stage site files
+        if: steps.creds.outputs.configured == 'true'
+        run: |
+          mkdir -p _site
+          cp index.html _site/
+
+      - name: FTP deploy
+        if: steps.creds.outputs.configured == 'true'
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: weonegroup.com
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: _site/
+          server-dir: ${{ inputs.server_dir || './' }}

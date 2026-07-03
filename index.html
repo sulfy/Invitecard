@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="ml" data-lang="ml">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>സ്നേഹ വിരുന്ന് · Sneha Virunnu — An Evening of Love</title>
+<meta name="description" content="സ്നേഹ വിരുന്നിലേക്ക് താങ്കളെ സ്നേഹത്തോടെ ക്ഷണിക്കുന്നു · You are lovingly invited to our family gathering — July 11, 2026, Muthuvattissery B2">
+<meta property="og:title" content="സ്നേഹ വിരുന്ന് · Sneha Virunnu">
+<meta property="og:description" content="ജൂലൈ 11, 2026 · ശനിയാഴ്ച · രാവിലെ 11 – ഉച്ചയ്ക്ക് 2 · മുതുവാട്ടിശ്ശേരി B2 · You are lovingly invited!">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#f7f5ee">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anek+Malayalam:wght@300;400;500;600;700&family=Baloo+Chettan+2:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Amiri:wght@400;700&family=Manjari:wght@100;400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ivory:#f7f5ee;
+  --paper:#fffdf7;
+  --ink:#3d4a33;
+  --ink-soft:#5d6f52;
+  --sage:#7a8b6f;
+  --sage-light:#aebfa3;
+  --olive:#6b7a4f;
+  --gold:#b3924a;
+  --gold-light:#d9c08a;
+  --blush:#e8c4c8;
+  --glass:rgba(255,255,255,.62);
+  --glass-border:rgba(122,139,111,.25);
+  --shadow:0 18px 50px -18px rgba(93,111,82,.35);
+  --radius:26px;
+  --ml-display:'Baloo Chettan 2','Anek Malayalam',sans-serif;
+  --ml-body:'Anek Malayalam','Manjari',sans-serif;
+  --en-display:'Cormorant Garamond',serif;
+  --ar:'Amiri',serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--ml-body);
+  color:var(--ink);
+  background:var(--ivory);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+/* ambient gradient mesh */
+.mesh{position:fixed;inset:0;z-index:-2;background:
+  radial-gradient(38rem 38rem at 12% 8%,rgba(174,191,163,.35),transparent 60%),
+  radial-gradient(30rem 30rem at 88% 18%,rgba(217,192,138,.28),transparent 60%),
+  radial-gradient(34rem 34rem at 80% 85%,rgba(232,196,200,.30),transparent 60%),
+  radial-gradient(28rem 28rem at 8% 90%,rgba(174,191,163,.25),transparent 60%),
+  var(--ivory);}
+#petals{position:fixed;inset:0;z-index:-1;pointer-events:none}
+
+/* language visibility */
+html[data-lang="ml"] .en{display:none!important}
+html[data-lang="en"] .ml{display:none!important}
+html[data-lang="en"] body,
+html[data-lang="en"] .card,
+html[data-lang="en"] p{font-family:var(--en-display)}
+
+/* ============ intro overlay ============ */
+#intro{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;
+  background:
+   radial-gradient(60rem 60rem at 50% 120%,rgba(174,191,163,.45),transparent 70%),
+   linear-gradient(170deg,#fbfaf4,#eef0e4);
+  transition:opacity 1s ease,visibility 1s;}
+#intro.hidden{opacity:0;visibility:hidden}
+.intro-card{text-align:center;padding:2rem;animation:floatIn 1.4s ease both}
+.monogram{width:150px;height:150px;margin:0 auto 1.6rem;border-radius:50%;position:relative;
+  display:flex;align-items:center;justify-content:center;font-size:3.4rem;
+  background:var(--paper);box-shadow:var(--shadow)}
+.monogram::before,.monogram::after{content:"";position:absolute;inset:-10px;border-radius:50%;
+  border:1.5px solid var(--gold-light);animation:spin 14s linear infinite}
+.monogram::after{inset:-20px;border-style:dashed;border-color:var(--sage-light);animation-duration:26s;animation-direction:reverse}
+.intro-bismillah{font-family:var(--ar);font-size:1.5rem;color:var(--olive);margin-bottom:.9rem;direction:rtl}
+.intro-title{font-family:var(--ml-display);font-size:clamp(2rem,7vw,3rem);color:var(--ink);font-weight:700}
+.intro-sub{font-family:var(--en-display);font-style:italic;font-size:1.15rem;color:var(--ink-soft);margin-top:.4rem;letter-spacing:.14em}
+#openBtn{margin-top:2.2rem;border:none;cursor:pointer;font-family:var(--ml-body);font-size:1.05rem;font-weight:600;
+  color:#fff;padding:1rem 2.6rem;border-radius:999px;position:relative;overflow:hidden;
+  background:linear-gradient(120deg,var(--olive),var(--sage) 55%,var(--gold));background-size:220% 100%;
+  box-shadow:0 14px 34px -12px rgba(107,122,79,.6);transition:transform .3s,box-shadow .3s;animation:shimmer 5s ease infinite}
+#openBtn:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 20px 40px -12px rgba(107,122,79,.7)}
+@keyframes shimmer{0%,100%{background-position:0% 0}50%{background-position:100% 0}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes floatIn{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+
+/* ============ language toggle ============ */
+#langToggle{position:fixed;top:1rem;right:1rem;z-index:60;display:flex;gap:2px;padding:4px;border-radius:999px;
+  background:var(--glass);border:1px solid var(--glass-border);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  box-shadow:0 8px 24px -10px rgba(93,111,82,.35)}
+#langToggle button{border:none;cursor:pointer;background:transparent;font-family:var(--ml-body);font-weight:600;
+  font-size:.86rem;padding:.42rem .95rem;border-radius:999px;color:var(--ink-soft);transition:all .3s}
+#langToggle button.active{background:linear-gradient(120deg,var(--olive),var(--sage));color:#fff;box-shadow:0 4px 12px -4px rgba(107,122,79,.6)}
+
+/* ============ layout ============ */
+main{max-width:820px;margin:0 auto;padding:0 1.25rem 4rem}
+section{margin-top:4.5rem}
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .9s ease,transform .9s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* hero */
+.hero{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:5.5rem 0 3rem;position:relative}
+.corner{position:absolute;width:min(34vw,220px);opacity:.9;pointer-events:none;z-index:-1}
+.corner.tl{top:8px;left:-20px;animation:sway 7s ease-in-out infinite}
+.corner.br{bottom:8px;right:-20px;transform:rotate(180deg);animation:sway 8s ease-in-out infinite reverse}
+@keyframes sway{0%,100%{rotate:0deg}50%{rotate:3deg}}
+.corner.br{transform-origin:center}
+.bismillah{font-family:var(--ar);font-size:clamp(1.4rem,4.5vw,2rem);color:var(--olive);direction:rtl}
+.salam{font-family:var(--ar);font-size:clamp(1.05rem,3.4vw,1.4rem);color:var(--ink-soft);margin-top:.7rem;direction:rtl}
+.grace{margin-top:1.6rem;font-size:clamp(1rem,3.2vw,1.2rem);color:var(--ink-soft);letter-spacing:.02em}
+.hero .en .grace-en{font-family:var(--en-display);font-style:italic}
+.venue-line{margin-top:1.5rem;font-size:clamp(1.02rem,3.4vw,1.25rem);color:var(--ink)}
+h1.title{font-family:var(--ml-display);font-size:clamp(2.6rem,10vw,4.6rem);line-height:1.15;margin-top:1rem;font-weight:700;
+  background:linear-gradient(120deg,var(--ink) 20%,var(--olive) 55%,var(--gold) 90%);
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+h1.title .en-title{font-family:var(--en-display);font-weight:600}
+.invite-line{margin-top:1.1rem;font-size:clamp(1.05rem,3.6vw,1.3rem);color:var(--ink-soft)}
+.divider{display:flex;align-items:center;gap:.9rem;justify-content:center;margin:1.8rem auto;color:var(--sage)}
+.divider::before,.divider::after{content:"";height:1px;width:min(20vw,110px);background:linear-gradient(90deg,transparent,var(--sage-light))}
+.divider::after{background:linear-gradient(90deg,var(--sage-light),transparent)}
+.date-chip{display:inline-flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:.6rem 1.1rem;margin-top:.4rem;
+  padding:1rem 1.8rem;border-radius:999px;background:var(--glass);border:1px solid var(--glass-border);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:var(--shadow);
+  font-weight:600;font-size:clamp(.98rem,3.2vw,1.15rem)}
+.date-chip .dot{width:5px;height:5px;border-radius:50%;background:var(--gold)}
+.hosts{margin-top:2rem;font-size:1.02rem;color:var(--ink-soft)}
+.hosts b{color:var(--ink);font-weight:700}
+.scroll-hint{margin-top:2.6rem;color:var(--sage);font-size:.85rem;letter-spacing:.2em;animation:bob 2.2s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0);opacity:.75}50%{transform:translateY(8px);opacity:1}}
+
+/* section headings */
+.sec-head{text-align:center;margin-bottom:2rem}
+.sec-head .eyebrow{font-size:.8rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);font-weight:700}
+.sec-head h2{font-family:var(--ml-display);font-size:clamp(1.7rem,5.5vw,2.4rem);margin-top:.5rem;color:var(--ink)}
+html[data-lang="en"] .sec-head h2{font-family:var(--en-display)}
+
+/* countdown */
+.count-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.9rem;max-width:560px;margin:0 auto}
+.count-cell{position:relative;text-align:center;padding:1.3rem .4rem 1.1rem;border-radius:var(--radius);
+  background:var(--glass);border:1px solid var(--glass-border);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  box-shadow:var(--shadow);overflow:hidden}
+.count-cell::before{content:"";position:absolute;inset:0;border-radius:var(--radius);padding:1.5px;
+  background:conic-gradient(from var(--ang,0deg),var(--gold-light),var(--sage-light),transparent 30%,transparent 70%,var(--gold-light));
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;
+  animation:ring 6s linear infinite;pointer-events:none}
+@property --ang{syntax:'<angle>';initial-value:0deg;inherits:false}
+@keyframes ring{to{--ang:360deg}}
+.count-cell .num{font-family:var(--en-display);font-size:clamp(1.9rem,7vw,3rem);font-weight:600;color:var(--olive);font-variant-numeric:tabular-nums;line-height:1}
+.count-cell .lbl{margin-top:.45rem;font-size:.78rem;letter-spacing:.14em;color:var(--ink-soft);font-weight:600}
+#countdownDone{text-align:center;font-family:var(--ml-display);font-size:1.4rem;color:var(--olive);display:none}
+
+/* detail cards */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.1rem}
+.card{position:relative;padding:1.8rem 1.5rem;border-radius:var(--radius);background:var(--glass);
+  border:1px solid var(--glass-border);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  box-shadow:var(--shadow);text-align:center;transition:transform .35s ease,box-shadow .35s ease}
+.card:hover{transform:translateY(-6px);box-shadow:0 26px 60px -20px rgba(93,111,82,.45)}
+.card .ico{width:58px;height:58px;margin:0 auto 1rem;border-radius:18px;display:flex;align-items:center;justify-content:center;
+  font-size:1.6rem;background:linear-gradient(135deg,rgba(174,191,163,.35),rgba(217,192,138,.3));border:1px solid var(--glass-border)}
+.card h3{font-family:var(--ml-display);font-size:1.12rem;color:var(--ink);margin-bottom:.5rem}
+html[data-lang="en"] .card h3{font-family:var(--en-display);font-size:1.3rem}
+.card p{color:var(--ink-soft);font-size:.98rem;line-height:1.65}
+.card p b{color:var(--ink)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;border:none;cursor:pointer;text-decoration:none;
+  font-family:var(--ml-body);font-weight:600;font-size:.95rem;padding:.8rem 1.5rem;border-radius:999px;transition:transform .3s,box-shadow .3s}
+.btn:active{transform:scale(.97)}
+.btn-primary{color:#fff;background:linear-gradient(120deg,var(--olive),var(--sage));box-shadow:0 12px 26px -10px rgba(107,122,79,.55)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 18px 34px -12px rgba(107,122,79,.65)}
+.btn-gold{color:#5d4a1e;background:linear-gradient(120deg,var(--gold-light),#ecd9ab);box-shadow:0 12px 26px -10px rgba(179,146,74,.5)}
+.btn-gold:hover{transform:translateY(-3px)}
+.btn-ghost{color:var(--olive);background:rgba(255,255,255,.7);border:1px solid var(--glass-border)}
+.btn-ghost:hover{transform:translateY(-3px);background:#fff}
+
+/* map */
+.map-wrap{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--glass-border);background:#fff}
+.map-wrap iframe{display:block;width:100%;height:340px;border:0;filter:saturate(.9)}
+.map-actions{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;margin-top:1.3rem}
+
+/* contacts */
+.contact-card{display:flex;flex-direction:column;align-items:center;gap:.9rem}
+.avatar{width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-family:var(--en-display);font-weight:600;font-size:1.4rem;color:#fff;
+  background:linear-gradient(135deg,var(--sage),var(--olive));box-shadow:0 10px 22px -8px rgba(107,122,79,.55)}
+.contact-card .name{font-family:var(--ml-display);font-size:1.08rem;color:var(--ink)}
+html[data-lang="en"] .contact-card .name{font-family:var(--en-display);font-size:1.22rem}
+.contact-card .phone{color:var(--ink-soft);font-size:.95rem;letter-spacing:.05em}
+.chips{display:flex;gap:.55rem}
+.chip{width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;
+  font-size:1.15rem;background:#fff;border:1px solid var(--glass-border);box-shadow:0 8px 18px -8px rgba(93,111,82,.4);
+  transition:transform .3s,box-shadow .3s}
+.chip:hover{transform:translateY(-4px) scale(1.06);box-shadow:0 14px 26px -10px rgba(93,111,82,.55)}
+.chip svg{width:21px;height:21px}
+
+/* calendar + share row */
+.actions-row{display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap}
+
+/* dua / closing */
+.closing{text-align:center;padding:3rem 1.5rem;border-radius:var(--radius);background:var(--glass);
+  border:1px solid var(--glass-border);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:var(--shadow)}
+.closing .flourish{font-size:1.6rem;color:var(--sage)}
+.closing .msg{margin-top:1rem;font-size:1.08rem;line-height:1.9;color:var(--ink-soft)}
+.closing .fam{margin-top:1.4rem;font-family:var(--ml-display);font-size:1.3rem;color:var(--ink)}
+html[data-lang="en"] .closing .fam{font-family:var(--en-display)}
+footer{text-align:center;padding:2.4rem 1rem 3.4rem;color:var(--sage);font-size:.85rem;letter-spacing:.06em}
+footer .heart{color:var(--blush)}
+
+@media(max-width:520px){
+  .count-grid{gap:.55rem}
+  .count-cell{padding:1rem .25rem .85rem;border-radius:18px}
+  .map-wrap iframe{height:280px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<div class="mesh"></div>
+<canvas id="petals"></canvas>
+
+<!-- intro -->
+<div id="intro" role="dialog" aria-label="Invitation">
+  <div class="intro-card">
+    <div class="monogram">🌿</div>
+    <div class="intro-bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+    <div class="intro-title"><span class="ml">സ്നേഹ വിരുന്ന്</span><span class="en">Sneha Virunnu</span></div>
+    <div class="intro-sub"><span class="ml">A FEAST OF LOVE</span><span class="en">A FEAST OF LOVE</span></div>
+    <button id="openBtn"><span class="ml">ക്ഷണക്കത്ത് തുറക്കുക ✉</span><span class="en">Open Invitation ✉</span></button>
+  </div>
+</div>
+
+<!-- language toggle -->
+<div id="langToggle" aria-label="Language">
+  <button id="btnMl" class="active" onclick="setLang('ml')">മലയാളം</button>
+  <button id="btnEn" onclick="setLang('en')">English</button>
+</div>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <svg class="corner tl" viewBox="0 0 200 200" fill="none" aria-hidden="true">
+      <path d="M10 190 C 30 120, 60 60, 150 20" stroke="#7a8b6f" stroke-width="2" opacity=".55"/>
+      <g fill="#8fa07f" opacity=".8">
+        <ellipse cx="60" cy="120" rx="16" ry="6" transform="rotate(-40 60 120)"/>
+        <ellipse cx="88" cy="88" rx="16" ry="6" transform="rotate(-50 88 88)"/>
+        <ellipse cx="120" cy="55" rx="15" ry="6" transform="rotate(-35 120 55)"/>
+        <ellipse cx="45" cy="152" rx="15" ry="6" transform="rotate(-55 45 152)"/>
+      </g>
+      <g fill="#d9c08a" opacity=".9">
+        <circle cx="150" cy="22" r="5"/><circle cx="136" cy="38" r="3.5"/><circle cx="30" cy="176" r="4"/>
+      </g>
+      <g fill="#e8c4c8"><circle cx="100" cy="70" r="3"/><circle cx="72" cy="104" r="2.6"/></g>
+    </svg>
+    <svg class="corner br" viewBox="0 0 200 200" fill="none" aria-hidden="true">
+      <path d="M10 190 C 30 120, 60 60, 150 20" stroke="#7a8b6f" stroke-width="2" opacity=".55"/>
+      <g fill="#8fa07f" opacity=".8">
+        <ellipse cx="60" cy="120" rx="16" ry="6" transform="rotate(-40 60 120)"/>
+        <ellipse cx="88" cy="88" rx="16" ry="6" transform="rotate(-50 88 88)"/>
+        <ellipse cx="120" cy="55" rx="15" ry="6" transform="rotate(-35 120 55)"/>
+        <ellipse cx="45" cy="152" rx="15" ry="6" transform="rotate(-55 45 152)"/>
+      </g>
+      <g fill="#d9c08a" opacity=".9">
+        <circle cx="150" cy="22" r="5"/><circle cx="136" cy="38" r="3.5"/><circle cx="30" cy="176" r="4"/>
+      </g>
+      <g fill="#e8c4c8"><circle cx="100" cy="70" r="3"/><circle cx="72" cy="104" r="2.6"/></g>
+    </svg>
+
+    <div class="bismillah">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+    <div class="salam">السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ</div>
+
+    <p class="grace">
+      <span class="ml">അല്ലാഹുവിന്റെ അനുഗ്രഹത്താലും കരുണയാലും</span>
+      <span class="en grace-en">By the grace and boundless mercy of the Almighty</span>
+    </p>
+
+    <p class="venue-line">
+      <span class="ml"><b>മുതുവാട്ടിശ്ശേരി B2</b>‑ൽ സംഘടിപ്പിക്കുന്ന</span>
+      <span class="en">We are delighted to host, at <b>Muthuvattissery B2</b>,</span>
+    </p>
+
+    <h1 class="title">
+      <span class="ml">സ്നേഹ വിരുന്നിലേക്ക്</span>
+      <span class="en en-title">A Feast of Love</span>
+    </h1>
+
+    <p class="invite-line">
+      <span class="ml">താങ്കളെ സ്നേഹത്തോടെ ക്ഷണിക്കുന്നു</span>
+      <span class="en">— and you are lovingly invited to join us —</span>
+    </p>
+
+    <div class="divider">✦</div>
+
+    <div class="date-chip">
+      <span class="ml">ജൂലൈ 11, 2026</span><span class="en">July 11, 2026</span>
+      <span class="dot"></span>
+      <span class="ml">ശനിയാഴ്ച</span><span class="en">Saturday</span>
+      <span class="dot"></span>
+      <span class="ml">രാവിലെ 11 – ഉച്ചയ്ക്ക് 2</span><span class="en">11:00 AM – 2:00 PM</span>
+    </div>
+
+    <p class="hosts">
+      <span class="ml">സ്നേഹത്തോടെ · <b>എം എ ബഷീറും കുടുംബവും</b></span>
+      <span class="en">With love · <b>M A Basheer &amp; Family</b></span>
+    </p>
+
+    <div class="scroll-hint">▾ <span class="ml">താഴേക്ക്</span><span class="en">SCROLL</span> ▾</div>
+  </section>
+
+  <!-- COUNTDOWN -->
+  <section class="reveal" id="countdown">
+    <div class="sec-head">
+      <div class="eyebrow"><span class="ml">കൗണ്ട്ഡൗൺ</span><span class="en">Countdown</span></div>
+      <h2><span class="ml">ഇനി വെറും…</span><span class="en">The joy begins in…</span></h2>
+    </div>
+    <div class="count-grid" id="countGrid">
+      <div class="count-cell"><div class="num" id="cd-d">–</div><div class="lbl"><span class="ml">ദിവസം</span><span class="en">DAYS</span></div></div>
+      <div class="count-cell"><div class="num" id="cd-h">–</div><div class="lbl"><span class="ml">മണിക്കൂർ</span><span class="en">HOURS</span></div></div>
+      <div class="count-cell"><div class="num" id="cd-m">–</div><div class="lbl"><span class="ml">മിനിറ്റ്</span><span class="en">MINUTES</span></div></div>
+      <div class="count-cell"><div class="num" id="cd-s">–</div><div class="lbl"><span class="ml">സെക്കൻഡ്</span><span class="en">SECONDS</span></div></div>
+    </div>
+    <p id="countdownDone"><span class="ml">🎉 ഇന്നാണ് ആ ദിനം! സ്വാഗതം!</span><span class="en">🎉 Today is the day! Welcome!</span></p>
+  </section>
+
+  <!-- DETAILS -->
+  <section class="reveal" id="details">
+    <div class="sec-head">
+      <div class="eyebrow"><span class="ml">വിശദാംശങ്ങൾ</span><span class="en">Details</span></div>
+      <h2><span class="ml">എപ്പോൾ · എവിടെ</span><span class="en">When &amp; Where</span></h2>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="ico">📅</div>
+        <h3><span class="ml">തീയതി</span><span class="en">Date</span></h3>
+        <p><b><span class="ml">ജൂലൈ 11, 2026</span><span class="en">July 11, 2026</span></b><br>
+        <span class="ml">ശനിയാഴ്ച</span><span class="en">Saturday</span></p>
+      </div>
+      <div class="card">
+        <div class="ico">🕚</div>
+        <h3><span class="ml">സമയം</span><span class="en">Time</span></h3>
+        <p><b><span class="ml">രാവിലെ 11:00 മുതൽ</span><span class="en">11:00 AM</span></b><br>
+        <span class="ml">ഉച്ചയ്ക്ക് 2:00 വരെ</span><span class="en">until 2:00 PM</span></p>
+      </div>
+      <div class="card">
+        <div class="ico">📍</div>
+        <h3><span class="ml">വേദി</span><span class="en">Venue</span></h3>
+        <p><b><span class="ml">മുതുവാട്ടിശ്ശേരി B2</span><span class="en">Muthuvattissery B2</span></b><br>
+        <span class="ml">കേരളം</span><span class="en">Kerala, India</span></p>
+      </div>
+    </div>
+    <div class="actions-row" style="margin-top:1.6rem">
+      <a class="btn btn-gold" id="gcalBtn" target="_blank" rel="noopener">🗓 <span class="ml">ഗൂഗിൾ കലണ്ടറിൽ ചേർക്കുക</span><span class="en">Add to Google Calendar</span></a>
+      <button class="btn btn-ghost" id="icsBtn">⬇ <span class="ml">കലണ്ടർ ഫയൽ (.ics)</span><span class="en">Download .ics</span></button>
+    </div>
+  </section>
+
+  <!-- MAP -->
+  <section class="reveal" id="location">
+    <div class="sec-head">
+      <div class="eyebrow"><span class="ml">ലൊക്കേഷൻ</span><span class="en">Location</span></div>
+      <h2><span class="ml">വഴി കണ്ടെത്തൂ</span><span class="en">Find your way</span></h2>
+    </div>
+    <div class="map-wrap">
+      <iframe title="Venue map — Muthuvattissery B2" loading="lazy"
+        src="https://maps.google.com/maps?q=11.3963531,75.9002820&z=15&output=embed"
+        referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    </div>
+    <div class="map-actions">
+      <a class="btn btn-primary" href="https://maps.app.goo.gl/CwGknirQH2XtHkoS6" target="_blank" rel="noopener">
+        🧭 <span class="ml">ഗൂഗിൾ മാപ്പിൽ തുറക്കുക</span><span class="en">Open in Google Maps</span></a>
+      <a class="btn btn-ghost" href="https://www.google.com/maps/dir/?api=1&destination=11.3963531,75.9002820" target="_blank" rel="noopener">
+        🚗 <span class="ml">ഡയറക്ഷൻസ്</span><span class="en">Get Directions</span></a>
+    </div>
+  </section>
+
+  <!-- CONTACTS -->
+  <section class="reveal" id="contact">
+    <div class="sec-head">
+      <div class="eyebrow"><span class="ml">ബന്ധപ്പെടുക</span><span class="en">Contact</span></div>
+      <h2><span class="ml">ഞങ്ങളെ വിളിക്കൂ</span><span class="en">Reach out to us</span></h2>
+    </div>
+    <div class="cards" id="contactCards"></div>
+  </section>
+
+  <!-- SHARE -->
+  <section class="reveal" id="share">
+    <div class="actions-row">
+      <button class="btn btn-primary" id="shareBtn">📤 <span class="ml">ക്ഷണം പങ്കിടുക</span><span class="en">Share this invitation</span></button>
+    </div>
+  </section>
+
+  <!-- CLOSING -->
+  <section class="reveal">
+    <div class="closing">
+      <div class="flourish">❦</div>
+      <p class="msg">
+        <span class="ml">താങ്കളുടെ സാന്നിധ്യവും പ്രാർത്ഥനയുമാണ് ഞങ്ങൾക്കുള്ള ഏറ്റവും വലിയ സമ്മാനം.<br>കുടുംബസമേതം എത്തിച്ചേരണമെന്ന് സ്നേഹപൂർവ്വം അഭ്യർത്ഥിക്കുന്നു.</span>
+        <span class="en">Your presence and prayers are the greatest gift we could ask for.<br>We warmly request the pleasure of your company, together with your family.</span>
+      </p>
+      <p class="fam">
+        <span class="ml">സ്നേഹത്തോടെ,<br>എം എ ബഷീറും കുടുംബവും</span>
+        <span class="en">With love,<br>M A Basheer &amp; Family</span>
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span class="ml">സ്നേഹത്തോടെ നിർമ്മിച്ചത്</span><span class="en">Made with</span> <span class="heart">♥</span> · സ്നേഹ വിരുന്ന് 2026
+</footer>
+
+<script>
+/* ---------- data ---------- */
+const EVENT = {
+  start: new Date('2026-07-11T11:00:00+05:30'),
+  end:   new Date('2026-07-11T14:00:00+05:30'),
+  titleMl: 'സ്നേഹ വിരുന്ന് — കുടുംബ സംഗമം',
+  titleEn: 'Sneha Virunnu — Family Gathering',
+  venue: 'Muthuvattissery B2, Kerala',
+  maps: 'https://maps.app.goo.gl/CwGknirQH2XtHkoS6'
+};
+const CONTACTS = [
+  { ml:'എം എ ബഷീർ', en:'M A Basheer', phone:'9349111122' },
+  { ml:'അലി സൽഫി',  en:'Ali Sulfy',   phone:'9349008888' },
+  { ml:'അസ്കർ അലി', en:'Askar Ali',   phone:'9349111122' }
+];
+
+/* ---------- intro ---------- */
+document.getElementById('openBtn').addEventListener('click', () => {
+  document.getElementById('intro').classList.add('hidden');
+  burst();
+});
+
+/* ---------- language ---------- */
+function setLang(l){
+  document.documentElement.setAttribute('data-lang', l);
+  document.documentElement.lang = l;
+  document.getElementById('btnMl').classList.toggle('active', l==='ml');
+  document.getElementById('btnEn').classList.toggle('active', l==='en');
+  try{ localStorage.setItem('lang', l); }catch(e){}
+}
+try{ const saved = localStorage.getItem('lang'); if(saved) setLang(saved); }catch(e){}
+
+/* ---------- countdown ---------- */
+function pad(n){ return String(n).padStart(2,'0'); }
+function tick(){
+  const diff = EVENT.start - new Date();
+  if (diff <= 0){
+    document.getElementById('countGrid').style.display = 'none';
+    document.getElementById('countdownDone').style.display = 'block';
+    return;
+  }
+  const d = Math.floor(diff/864e5), h = Math.floor(diff/36e5)%24,
+        m = Math.floor(diff/6e4)%60, s = Math.floor(diff/1e3)%60;
+  cdD.textContent = d; cdH.textContent = pad(h); cdM.textContent = pad(m); cdS.textContent = pad(s);
+}
+const cdD = document.getElementById('cd-d'), cdH = document.getElementById('cd-h'),
+      cdM = document.getElementById('cd-m'), cdS = document.getElementById('cd-s');
+tick(); setInterval(tick, 1000);
+
+/* ---------- contacts ---------- */
+const waText = encodeURIComponent('അസ്സലാമു അലൈക്കും! സ്നേഹ വിരുന്ന് ക്ഷണം സംബന്ധിച്ച്… (Regarding the Sneha Virunnu invitation)');
+const svgPhone = '<svg viewBox="0 0 24 24" fill="none" stroke="#6b7a4f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>';
+const svgWa = '<svg viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>';
+const svgSms = '<svg viewBox="0 0 24 24" fill="none" stroke="#b3924a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>';
+
+document.getElementById('contactCards').innerHTML = CONTACTS.map(c => {
+  const intl = '91' + c.phone;
+  const initials = c.en.split(' ').map(w=>w[0]).join('').slice(0,2);
+  return `<div class="card contact-card">
+    <div class="avatar">${initials}</div>
+    <div class="name"><span class="ml">${c.ml}</span><span class="en">${c.en}</span></div>
+    <div class="phone">+91 ${c.phone.slice(0,5)} ${c.phone.slice(5)}</div>
+    <div class="chips">
+      <a class="chip" href="tel:+${intl}" aria-label="Call ${c.en}" title="Call">${svgPhone}</a>
+      <a class="chip" href="https://wa.me/${intl}?text=${waText}" target="_blank" rel="noopener" aria-label="WhatsApp ${c.en}" title="WhatsApp">${svgWa}</a>
+      <a class="chip" href="sms:+${intl}" aria-label="Message ${c.en}" title="SMS">${svgSms}</a>
+    </div>
+  </div>`;
+}).join('');
+
+/* ---------- calendar ---------- */
+function gDate(d){ return d.toISOString().replace(/[-:]/g,'').replace(/\.\d{3}/,''); }
+const gcal = 'https://calendar.google.com/calendar/render?action=TEMPLATE'
+  + '&text=' + encodeURIComponent(EVENT.titleEn + ' · ' + EVENT.titleMl)
+  + '&dates=' + gDate(EVENT.start) + '/' + gDate(EVENT.end)
+  + '&details=' + encodeURIComponent('താങ്കളെ സ്നേഹത്തോടെ ക്ഷണിക്കുന്നു · You are lovingly invited!\nMap: ' + EVENT.maps)
+  + '&location=' + encodeURIComponent(EVENT.venue);
+document.getElementById('gcalBtn').href = gcal;
+
+document.getElementById('icsBtn').addEventListener('click', () => {
+  const ics = ['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//SnehaVirunnu//Invite//ML',
+    'BEGIN:VEVENT','UID:sneha-virunnu-2026@weonegroup.com',
+    'DTSTAMP:' + gDate(new Date()),
+    'DTSTART:' + gDate(EVENT.start),
+    'DTEND:' + gDate(EVENT.end),
+    'SUMMARY:' + EVENT.titleEn,
+    'DESCRIPTION:താങ്കളെ സ്നേഹത്തോടെ ക്ഷണിക്കുന്നു · You are lovingly invited! Map: ' + EVENT.maps,
+    'LOCATION:' + EVENT.venue,
+    'END:VEVENT','END:VCALENDAR'].join('\r\n');
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([ics], {type:'text/calendar'}));
+  a.download = 'sneha-virunnu-2026.ics';
+  a.click(); URL.revokeObjectURL(a.href);
+});
+
+/* ---------- share ---------- */
+document.getElementById('shareBtn').addEventListener('click', async () => {
+  const data = { title:'സ്നേഹ വിരുന്ന് · Sneha Virunnu',
+    text:'താങ്കളെ സ്നേഹത്തോടെ ക്ഷണിക്കുന്നു · You are lovingly invited! ജൂലൈ 11, 2026 · Muthuvattissery B2',
+    url: location.href };
+  if (navigator.share){ try{ await navigator.share(data); }catch(e){} }
+  else window.open('https://wa.me/?text=' + encodeURIComponent(data.text + '\n' + data.url), '_blank');
+});
+
+/* ---------- reveal on scroll ---------- */
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+}), {threshold:.12});
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+/* ---------- petals ---------- */
+const cv = document.getElementById('petals'), cx = cv.getContext('2d');
+let W, H, petals = [];
+const COLORS = ['#aebfa3','#8fa07f','#d9c08a','#e8c4c8','#c9d6bd'];
+function resize(){ W = cv.width = innerWidth * devicePixelRatio; H = cv.height = innerHeight * devicePixelRatio;
+  cv.style.width = innerWidth+'px'; cv.style.height = innerHeight+'px'; }
+addEventListener('resize', resize); resize();
+function newPetal(y){ return {
+  x: Math.random()*W, y: y!==undefined ? y : -20*devicePixelRatio,
+  r: (4+Math.random()*7)*devicePixelRatio,
+  vy: (.35+Math.random()*.7)*devicePixelRatio,
+  vx: (Math.random()-.5)*.6*devicePixelRatio,
+  a: Math.random()*Math.PI*2, va: (Math.random()-.5)*.02,
+  c: COLORS[Math.floor(Math.random()*COLORS.length)],
+  o: .35+Math.random()*.4 }; }
+const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (!REDUCED){
+  for(let i=0;i<26;i++) petals.push(newPetal(Math.random()*H));
+  (function loop(){
+    cx.clearRect(0,0,W,H);
+    petals.forEach(p=>{
+      p.y += p.vy; p.x += p.vx + Math.sin(p.y/60/devicePixelRatio)*.3*devicePixelRatio; p.a += p.va;
+      if (p.y > H + 30){ Object.assign(p, newPetal()); }
+      cx.save(); cx.translate(p.x,p.y); cx.rotate(p.a); cx.globalAlpha = p.o;
+      cx.fillStyle = p.c; cx.beginPath();
+      cx.ellipse(0,0,p.r,p.r*.45,0,0,Math.PI*2); cx.fill(); cx.restore();
+    });
+    requestAnimationFrame(loop);
+  })();
+}
+/* confetti-ish burst on open */
+function burst(){
+  if (REDUCED) return;
+  for(let i=0;i<40;i++){ const p = newPetal(-Math.random()*H*.3); p.vy *= 2.2; petals.push(p); }
+  setTimeout(()=>{ petals = petals.slice(0,26); }, 6000);
+}
+</script>
+</body>
+</html>
