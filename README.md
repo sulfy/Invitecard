@@ -23,7 +23,8 @@ The whole site is a single self-contained file: [`index.html`](index.html).
 ### GitHub Pages (automatic)
 
 `.github/workflows/deploy-pages.yml` deploys `index.html` to GitHub Pages on
-every push. Live at: **https://sulfy.github.io/Invitecard/**
+every push. It publishes the `gh-pages` branch, served at:
+**https://sulfy.github.io/Invitecard/**
 
 ### weonegroup.com via FTP (needs one-time setup)
 

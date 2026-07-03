@@ -1,14 +1,15 @@
 name: Deploy to GitHub Pages
 
+# Publishes index.html to the gh-pages branch, which GitHub Pages
+# serves automatically at https://sulfy.github.io/Invitecard/
+
 on:
   push:
-    branches: ["**"]
+    branches: ["claude/family-gathering-invite-card-mn7qlu", "main"]
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 concurrency:
   group: pages
@@ -17,28 +18,19 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Setup Pages (auto-enable)
-        uses: actions/configure-pages@v5
-        with:
-          enablement: true
 
       - name: Stage site files
         run: |
           mkdir -p _site
           cp index.html _site/
+          touch _site/.nojekyll
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Publish to gh-pages branch
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          path: _site
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
+          commit_message: "Deploy invitation site"
