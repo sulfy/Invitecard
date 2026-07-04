@@ -57,10 +57,16 @@ jobs:
           set ssl:verify-certificate no
           set net:timeout 20
           set net:max-retries 2
+          echo "===== pwd ====="
+          pwd
           echo "===== FTP root ====="
           cls -la
           echo "===== two levels deep ====="
           find -d 2
+          echo "===== parent dir ====="
+          cls -la ..
+          echo "===== server root ====="
+          cls -la /
           bye
           CMDS
 
