@@ -351,10 +351,6 @@ footer .heart{color:var(--blush)}
         <span class="ml">എളേറ്റിൽ വട്ടോളി, കൊടുവള്ളി</span><span class="en">Elettil Vattoli, Koduvally</span></p>
       </div>
     </div>
-    <div class="actions-row" style="margin-top:1.6rem">
-      <a class="btn btn-gold" id="gcalBtn" target="_blank" rel="noopener">🗓 <span class="ml">ഗൂഗിൾ കലണ്ടറിൽ ചേർക്കുക</span><span class="en">Add to Google Calendar</span></a>
-      <button class="btn btn-ghost" id="icsBtn">⬇ <span class="ml">കലണ്ടർ ഫയൽ (.ics)</span><span class="en">Download .ics</span></button>
-    </div>
   </section>
 
   <!-- MAP -->
@@ -369,9 +365,7 @@ footer .heart{color:var(--blush)}
         referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
     </div>
     <div class="map-actions">
-      <a class="btn btn-primary" href="https://maps.app.goo.gl/2iRk8wXbJcQuARdp9" target="_blank" rel="noopener">
-        🧭 <span class="ml">ഗൂഗിൾ മാപ്പിൽ തുറക്കുക</span><span class="en">Open in Google Maps</span></a>
-      <a class="btn btn-ghost" href="https://www.google.com/maps/dir/?api=1&destination=11.3964067,75.9002133" target="_blank" rel="noopener">
+      <a class="btn btn-primary" href="https://www.google.com/maps/dir/?api=1&destination=11.3964067,75.9002133" target="_blank" rel="noopener">
         🚗 <span class="ml">ഡയറക്ഷൻസ്</span><span class="en">Get Directions</span></a>
     </div>
   </section>
@@ -482,31 +476,6 @@ document.getElementById('contactCards').innerHTML = CONTACTS.map(c => {
   </div>`;
 }).join('');
 
-/* ---------- calendar ---------- */
-function gDate(d){ return d.toISOString().replace(/[-:]/g,'').replace(/\.\d{3}/,''); }
-const gcal = 'https://calendar.google.com/calendar/render?action=TEMPLATE'
-  + '&text=' + encodeURIComponent(EVENT.titleEn + ' · ' + EVENT.titleMl)
-  + '&dates=' + gDate(EVENT.start) + '/' + gDate(EVENT.end)
-  + '&details=' + encodeURIComponent('താങ്കളെ സ്നേഹത്തോടെ ക്ഷണിക്കുന്നു · You are lovingly invited!\nMap: ' + EVENT.maps)
-  + '&location=' + encodeURIComponent(EVENT.venue);
-document.getElementById('gcalBtn').href = gcal;
-
-document.getElementById('icsBtn').addEventListener('click', () => {
-  const ics = ['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//SnehaVirunnu//Invite//ML',
-    'BEGIN:VEVENT','UID:sneha-virunnu-2026@weonegroup.com',
-    'DTSTAMP:' + gDate(new Date()),
-    'DTSTART:' + gDate(EVENT.start),
-    'DTEND:' + gDate(EVENT.end),
-    'SUMMARY:' + EVENT.titleEn,
-    'DESCRIPTION:താങ്കളെ സ്നേഹത്തോടെ ക്ഷണിക്കുന്നു · You are lovingly invited! Map: ' + EVENT.maps,
-    'LOCATION:' + EVENT.venue,
-    'END:VEVENT','END:VCALENDAR'].join('\r\n');
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(new Blob([ics], {type:'text/calendar'}));
-  a.download = 'sneha-virunnu-2026.ics';
-  a.click(); URL.revokeObjectURL(a.href);
-});
-
 /* ---------- share ---------- */
 document.getElementById('shareBtn').addEventListener('click', async () => {
   const data = { title:'സ്നേഹ വിരുന്ന് · Sneha Virunnu',
@@ -600,8 +569,6 @@ function burst(){
   });
   document.getElementById('openBtn').addEventListener('click', () => send('open_invite'));
   document.getElementById('shareBtn').addEventListener('click', () => send('share'));
-  document.getElementById('gcalBtn').addEventListener('click', () => send('calendar_google'));
-  document.getElementById('icsBtn').addEventListener('click', () => send('calendar_ics'));
   document.querySelectorAll('#langToggle button').forEach(b =>
     b.addEventListener('click', () => send(b.id === 'btnEn' ? 'lang_en' : 'lang_ml')));
   document.querySelectorAll('.map-actions a').forEach(a =>
