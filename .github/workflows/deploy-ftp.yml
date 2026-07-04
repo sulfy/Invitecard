@@ -79,6 +79,8 @@ jobs:
         run: |
           mkdir -p _site
           cp index.html _site/
+          cp tracking/track.php tracking/stats.php _site/
+          cp tracking/.htaccess _site/.htaccess
 
       - name: FTP deploy
         if: inputs.mode == 'deploy'

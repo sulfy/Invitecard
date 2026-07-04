@@ -558,6 +558,60 @@ function burst(){
   for(let i=0;i<40;i++){ const p = newPetal(-Math.random()*H*.3); p.vy *= 2.2; petals.push(p); }
   setTimeout(()=>{ petals = petals.slice(0,26); }, 6000);
 }
+
+/* ---------- visit analytics (self-hosted, first-party) ---------- */
+(function(){
+  const host = location.hostname;
+  const T = (host === 'breezeland.in' || host === 'www.breezeland.in')
+    ? 'track.php' : 'https://breezeland.in/invite/track.php';
+  let vid = 'na';
+  try {
+    vid = localStorage.getItem('_vid');
+    if (!vid){ vid = Date.now().toString(36) + Math.random().toString(36).slice(2,10); localStorage.setItem('_vid', vid); }
+  } catch(e){}
+  function send(ev, extra){
+    try {
+      const p = Object.assign({
+        ev, vid, ts: Date.now(),
+        page: location.href, ref: document.referrer,
+        sc: screen.width + 'x' + screen.height,
+        vp: innerWidth + 'x' + innerHeight,
+        dpr: devicePixelRatio || 1,
+        lang: navigator.language || '',
+        langs: (navigator.languages || []).join(','),
+        tz: (Intl.DateTimeFormat().resolvedOptions().timeZone) || '',
+        plat: (navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || '',
+        mob: navigator.userAgentData ? (navigator.userAgentData.mobile ? '1' : '0') : '',
+        touch: navigator.maxTouchPoints || 0,
+        mem: navigator.deviceMemory || '',
+        cores: navigator.hardwareConcurrency || '',
+        net: (navigator.connection && navigator.connection.effectiveType) || '',
+        ui: document.documentElement.getAttribute('data-lang')
+      }, extra || {});
+      const body = JSON.stringify(p);
+      if (navigator.sendBeacon) navigator.sendBeacon(T, body);
+      else fetch(T, {method:'POST', mode:'no-cors', keepalive:true, body}).catch(()=>{});
+    } catch(e){}
+  }
+  send('view');
+  const t0 = Date.now();
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'hidden') send('leave', {dur: Math.round((Date.now() - t0) / 1000)});
+  });
+  document.getElementById('openBtn').addEventListener('click', () => send('open_invite'));
+  document.getElementById('shareBtn').addEventListener('click', () => send('share'));
+  document.getElementById('gcalBtn').addEventListener('click', () => send('calendar_google'));
+  document.getElementById('icsBtn').addEventListener('click', () => send('calendar_ics'));
+  document.querySelectorAll('#langToggle button').forEach(b =>
+    b.addEventListener('click', () => send(b.id === 'btnEn' ? 'lang_en' : 'lang_ml')));
+  document.querySelectorAll('.map-actions a').forEach(a =>
+    a.addEventListener('click', () => send('map')));
+  document.querySelectorAll('.chip').forEach(a => a.addEventListener('click', () => {
+    const h = a.getAttribute('href') || '';
+    send(h.indexOf('tel') === 0 ? 'call' : (h.indexOf('wa.me') > -1 ? 'whatsapp' : 'sms'),
+         {to: h.replace(/\D+/g, '').slice(-10)});
+  }));
+})();
 </script>
 </body>
 </html>

@@ -17,6 +17,11 @@ The whole site is a single self-contained file: [`index.html`](index.html).
 - 📞 One-tap Call / WhatsApp / SMS buttons for the hosts
 - 📤 Native share button (WhatsApp fallback)
 - 📱 Fully responsive, respects reduced-motion settings
+- 📊 Self-hosted, first-party analytics (`tracking/`): `track.php` receives
+  beacons from the page; `stats.php` is a password-protected dashboard
+  (visits, uniques, devices, OS, browsers, countries, taps). Data is stored
+  in `visits.jsonl` on the server, blocked from web access by `.htaccess`.
+  The password lives only as a SHA-256 hash — never in plain text.
 
 ## Hosting
 
