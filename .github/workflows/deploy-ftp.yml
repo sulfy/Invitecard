@@ -1,6 +1,7 @@
-name: Deploy to weonegroup.com (FTP)
+name: Deploy to FTP hosting
 
-# Publishes index.html to the GoDaddy hosting via FTP.
+# Publishes index.html to the GoDaddy hosting via FTP so the invitation
+# is reachable at www.breezeland.in/invitation
 #
 # SETUP (one time): in this repo go to
 #   Settings -> Secrets and variables -> Actions -> New repository secret
@@ -8,22 +9,27 @@ name: Deploy to weonegroup.com (FTP)
 #   FTP_USERNAME  -> the FTP user name
 #   FTP_PASSWORD  -> the FTP password
 #
-# Then run this workflow from the Actions tab (or push a change).
-# Adjust "server-dir" below if your FTP user does not land directly
-# in the folder that serves the website.
+# Run from the Actions tab. Use mode "list" to inspect the remote folder
+# structure without changing anything, then "deploy" with the right
+# server_dir.
 
 on:
-  push:
-    branches: ["**"]
   workflow_dispatch:
     inputs:
+      mode:
+        description: "list = only show remote folders, deploy = upload the site"
+        type: choice
+        options:
+          - deploy
+          - list
+        default: deploy
       server_dir:
         description: "Remote directory to upload into (must end with /)"
         required: false
-        default: "./"
+        default: "./invitation/"
 
 jobs:
-  ftp-deploy:
+  ftp:
     runs-on: ubuntu-latest
     steps:
       - name: Check FTP credentials are configured
@@ -34,27 +40,46 @@ jobs:
         run: |
           if [ -z "$FTP_USERNAME" ] || [ -z "$FTP_PASSWORD" ]; then
             echo "configured=false" >> "$GITHUB_OUTPUT"
-            echo "::notice::FTP_USERNAME / FTP_PASSWORD secrets not set - skipping FTP deploy."
-          else
-            echo "configured=true" >> "$GITHUB_OUTPUT"
+            echo "::error::FTP_USERNAME / FTP_PASSWORD secrets are not set. Add them in Settings -> Secrets and variables -> Actions."
+            exit 1
           fi
+          echo "configured=true" >> "$GITHUB_OUTPUT"
+
+      - name: List remote folders
+        if: inputs.mode == 'list'
+        env:
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq lftp >/dev/null
+          lftp -u "$FTP_USERNAME,$FTP_PASSWORD" ftp://weonegroup.com <<'CMDS'
+          set ssl:verify-certificate no
+          set net:timeout 20
+          set net:max-retries 2
+          echo "===== FTP root ====="
+          cls -la
+          echo "===== two levels deep ====="
+          find -d 2
+          bye
+          CMDS
 
       - name: Checkout
-        if: steps.creds.outputs.configured == 'true'
+        if: inputs.mode == 'deploy'
         uses: actions/checkout@v4
 
       - name: Stage site files
-        if: steps.creds.outputs.configured == 'true'
+        if: inputs.mode == 'deploy'
         run: |
           mkdir -p _site
           cp index.html _site/
 
       - name: FTP deploy
-        if: steps.creds.outputs.configured == 'true'
+        if: inputs.mode == 'deploy'
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: weonegroup.com
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: _site/
-          server-dir: ${{ inputs.server_dir || './' }}
+          server-dir: ${{ inputs.server_dir }}
